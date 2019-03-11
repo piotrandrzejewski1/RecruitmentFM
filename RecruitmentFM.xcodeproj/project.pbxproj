@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05C1B54EDDE6AB84A00D461D /* Pods_RecruitmentFM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0748E3C2EA29A79920E6ECE /* Pods_RecruitmentFM.framework */; };
 		AE54E6232236F65500D125BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54E6222236F65500D125BD /* AppDelegate.swift */; };
 		AE54E6252236F65500D125BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54E6242236F65500D125BD /* ViewController.swift */; };
 		AE54E6282236F65600D125BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE54E6262236F65600D125BD /* Main.storyboard */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		575909492D67AD148276F266 /* Pods-RecruitmentFM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecruitmentFM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RecruitmentFM/Pods-RecruitmentFM.debug.xcconfig"; sourceTree = "<group>"; };
+		AA02B6D08D66447D02ECF7FF /* Pods-RecruitmentFM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecruitmentFM.release.xcconfig"; path = "Pods/Target Support Files/Pods-RecruitmentFM/Pods-RecruitmentFM.release.xcconfig"; sourceTree = "<group>"; };
 		AE54E61F2236F65500D125BD /* RecruitmentFM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecruitmentFM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE54E6222236F65500D125BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE54E6242236F65500D125BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +27,7 @@
 		AE54E62C2236F65800D125BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE54E62F2236F65800D125BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE54E6312236F65800D125BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0748E3C2EA29A79920E6ECE /* Pods_RecruitmentFM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecruitmentFM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05C1B54EDDE6AB84A00D461D /* Pods_RecruitmentFM.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D78B47A4937D2A0FCACC9C9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F0748E3C2EA29A79920E6ECE /* Pods_RecruitmentFM.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9EF049F3331AA31E025FC857 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				575909492D67AD148276F266 /* Pods-RecruitmentFM.debug.xcconfig */,
+				AA02B6D08D66447D02ECF7FF /* Pods-RecruitmentFM.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		AE54E6162236F65500D125BD = {
 			isa = PBXGroup;
 			children = (
 				AE54E6212236F65500D125BD /* RecruitmentFM */,
 				AE54E6202236F65500D125BD /* Products */,
+				9EF049F3331AA31E025FC857 /* Pods */,
+				2D78B47A4937D2A0FCACC9C9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,9 +130,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AE54E6342236F65800D125BD /* Build configuration list for PBXNativeTarget "RecruitmentFM" */;
 			buildPhases = (
+				4CDD499E1F56248751BD2A75 /* [CP] Check Pods Manifest.lock */,
 				AE54E61B2236F65500D125BD /* Sources */,
 				AE54E61C2236F65500D125BD /* Frameworks */,
 				AE54E61D2236F65500D125BD /* Resources */,
+				6278295E6080426D402A7428 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -164,6 +190,57 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4CDD499E1F56248751BD2A75 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RecruitmentFM-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6278295E6080426D402A7428 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-RecruitmentFM/Pods-RecruitmentFM-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/ProgressHUD/ProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RecruitmentFM/Pods-RecruitmentFM-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AE54E61B2236F65500D125BD /* Sources */ = {
@@ -316,6 +393,7 @@
 		};
 		AE54E6352236F65800D125BD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 575909492D67AD148276F266 /* Pods-RecruitmentFM.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -333,6 +411,7 @@
 		};
 		AE54E6362236F65800D125BD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA02B6D08D66447D02ECF7FF /* Pods-RecruitmentFM.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
