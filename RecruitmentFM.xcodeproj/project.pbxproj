@@ -9,11 +9,14 @@
 /* Begin PBXBuildFile section */
 		05C1B54EDDE6AB84A00D461D /* Pods_RecruitmentFM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0748E3C2EA29A79920E6ECE /* Pods_RecruitmentFM.framework */; };
 		AE54E6232236F65500D125BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54E6222236F65500D125BD /* AppDelegate.swift */; };
-		AE54E6252236F65500D125BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54E6242236F65500D125BD /* ViewController.swift */; };
+		AE54E6252236F65500D125BD /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54E6242236F65500D125BD /* ListViewController.swift */; };
 		AE54E6282236F65600D125BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE54E6262236F65600D125BD /* Main.storyboard */; };
 		AE54E62B2236F65600D125BD /* RecruitmentFM.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AE54E6292236F65600D125BD /* RecruitmentFM.xcdatamodeld */; };
 		AE54E62D2236F65800D125BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE54E62C2236F65800D125BD /* Assets.xcassets */; };
 		AE54E6302236F65800D125BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE54E62E2236F65800D125BD /* LaunchScreen.storyboard */; };
+		AE54E6442237045800D125BD /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54E6422237045800D125BD /* ItemCell.swift */; };
+		AE54E6452237045800D125BD /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE54E6432237045800D125BD /* ItemCell.xib */; };
+		AE54E64722386B7600D125BD /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54E64622386B7600D125BD /* DetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,12 +24,15 @@
 		AA02B6D08D66447D02ECF7FF /* Pods-RecruitmentFM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecruitmentFM.release.xcconfig"; path = "Pods/Target Support Files/Pods-RecruitmentFM/Pods-RecruitmentFM.release.xcconfig"; sourceTree = "<group>"; };
 		AE54E61F2236F65500D125BD /* RecruitmentFM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecruitmentFM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE54E6222236F65500D125BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AE54E6242236F65500D125BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AE54E6242236F65500D125BD /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		AE54E6272236F65600D125BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AE54E62A2236F65600D125BD /* RecruitmentFM.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RecruitmentFM.xcdatamodel; sourceTree = "<group>"; };
 		AE54E62C2236F65800D125BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE54E62F2236F65800D125BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE54E6312236F65800D125BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE54E6422237045800D125BD /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		AE54E6432237045800D125BD /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
+		AE54E64622386B7600D125BD /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		F0748E3C2EA29A79920E6ECE /* Pods_RecruitmentFM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecruitmentFM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -102,6 +108,7 @@
 			children = (
 				AE54E6262236F65600D125BD /* Main.storyboard */,
 				AE54E62E2236F65800D125BD /* LaunchScreen.storyboard */,
+				AE54E63F223703DC00D125BD /* CutomCells */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -110,7 +117,8 @@
 			isa = PBXGroup;
 			children = (
 				AE54E6222236F65500D125BD /* AppDelegate.swift */,
-				AE54E6242236F65500D125BD /* ViewController.swift */,
+				AE54E6242236F65500D125BD /* ListViewController.swift */,
+				AE54E64622386B7600D125BD /* DetailsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -121,6 +129,15 @@
 				AE54E62C2236F65800D125BD /* Assets.xcassets */,
 			);
 			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		AE54E63F223703DC00D125BD /* CutomCells */ = {
+			isa = PBXGroup;
+			children = (
+				AE54E6422237045800D125BD /* ItemCell.swift */,
+				AE54E6432237045800D125BD /* ItemCell.xib */,
+			);
+			path = CutomCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +200,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE54E6452237045800D125BD /* ItemCell.xib in Resources */,
 				AE54E6302236F65800D125BD /* LaunchScreen.storyboard in Resources */,
 				AE54E62D2236F65800D125BD /* Assets.xcassets in Resources */,
 				AE54E6282236F65600D125BD /* Main.storyboard in Resources */,
@@ -247,9 +265,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE54E6252236F65500D125BD /* ViewController.swift in Sources */,
+				AE54E6442237045800D125BD /* ItemCell.swift in Sources */,
+				AE54E6252236F65500D125BD /* ListViewController.swift in Sources */,
 				AE54E62B2236F65600D125BD /* RecruitmentFM.xcdatamodeld in Sources */,
 				AE54E6232236F65500D125BD /* AppDelegate.swift in Sources */,
+				AE54E64722386B7600D125BD /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
