@@ -53,12 +53,17 @@ class ListViewController: UITableViewController {
         return items.count
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "goToItem", sender: self)
+    }
+    
+    
     //MARK: segue methods
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToItem" {
-            let itemsVc = segue.destination as! DetailsViewController
-//            itemsVc.selectedItem = item?[tableView.indexPathForSelectedRow!.row]
-//            tableView.deselectRow(at: tableView.indexPathForSelectedRow!, animated: true)
+            let detailsVc = segue.destination as! DetailsViewController
+            detailsVc.selectedItem = items[tableView.indexPathForSelectedRow!.row]
+            tableView.deselectRow(at: tableView.indexPathForSelectedRow!, animated: true)
         }
     }
     

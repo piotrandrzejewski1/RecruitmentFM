@@ -7,24 +7,40 @@
 //
 
 import UIKit
+import WebKit
+import ProgressHUD
 
-class DetailsViewController: UIViewController {
-
+class DetailsViewController: UIViewController, WKNavigationDelegate {
+    @IBOutlet weak var webView: WKWebView!
+    
+    var selectedItem : Item? 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        webView.navigationDelegate = self
+        
         // Do any additional setup after loading the view.
+        // Place the URL in a URL Request.
+        if let url = selectedItem?.desc?.embededUrl {
+            let request = URLRequest(url: url)
+            ProgressHUD.show()
+            webView.load(request)
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillDisappear(_ animated: Bool) {
+        ProgressHUD.dismiss()
     }
-    */
-
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        ProgressHUD.dismiss()
+    }
+    
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        ProgressHUD.showError("Could not load the page")
+    }
+    
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        ProgressHUD.showError("Could not load the page")
+    }
 }

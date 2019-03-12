@@ -17,6 +17,7 @@
 		AE54E6442237045800D125BD /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54E6422237045800D125BD /* ItemCell.swift */; };
 		AE54E6452237045800D125BD /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE54E6432237045800D125BD /* ItemCell.xib */; };
 		AE54E64722386B7600D125BD /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54E64622386B7600D125BD /* DetailsViewController.swift */; };
+		AE54E6492238702E00D125BD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE54E6482238702E00D125BD /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		AE54E6422237045800D125BD /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		AE54E6432237045800D125BD /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
 		AE54E64622386B7600D125BD /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		AE54E6482238702E00D125BD /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		F0748E3C2EA29A79920E6ECE /* Pods_RecruitmentFM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecruitmentFM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				AE54E6292236F65600D125BD /* RecruitmentFM.xcdatamodeld */,
+				AE54E6482238702E00D125BD /* Extensions.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE54E6442237045800D125BD /* ItemCell.swift in Sources */,
+				AE54E6492238702E00D125BD /* Extensions.swift in Sources */,
 				AE54E6252236F65500D125BD /* ListViewController.swift in Sources */,
 				AE54E62B2236F65600D125BD /* RecruitmentFM.xcdatamodeld in Sources */,
 				AE54E6232236F65500D125BD /* AppDelegate.swift in Sources */,
