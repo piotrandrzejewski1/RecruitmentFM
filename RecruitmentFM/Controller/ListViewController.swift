@@ -22,6 +22,7 @@ class ListViewController: UITableViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         tableView.register(UINib(nibName: "ItemCell", bundle: nil), forCellReuseIdentifier: "itemCell")
+        tableView.rowHeight = UITableView.automaticDimension
         
         do {
             let request : NSFetchRequest<Item> = Item.fetchRequest()
@@ -44,8 +45,24 @@ class ListViewController: UITableViewController {
     //MARK: tableView methods
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath)
-        cell.textLabel?.text = items[indexPath.row].title
+        let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath) as! ItemCell
+        cell.labelTitle.text = items[indexPath.row].title
+        cell.labelDescription.text = items[indexPath.row].desc?.trimUrl
+        cell.labelUrl.text = items[indexPath.row].imageUrl
+    
+        if let date = items[indexPath.row].modificationDate {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            cell.labelDate.text = dateFormatter.string(from: date)
+        }
+        
+        if let urlString = items[indexPath.row].imageUrl {
+            let url = URL(string: urlString)
+            let data = try? Data(contentsOf: url!)
+                cell.imageViewItem.image = UIImage(data: data!)
+            
+        }
+        
         return cell
     }
 

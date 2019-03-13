@@ -18,4 +18,13 @@ extension String {
             return nil
         }
     }
+    var trimUrl: String {
+        if self.contains("\thttp") {
+            let str = self[...self.range(of: "\thttp")!.lowerBound]
+            return String(str)
+        }
+        else {
+            return self
+        }
+    }
 }
