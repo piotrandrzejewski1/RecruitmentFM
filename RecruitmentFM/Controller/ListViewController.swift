@@ -21,11 +21,12 @@ class ListViewController: UITableViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        tableView.register(UINib(nibName: "ItemCell", bundle: nil), forCellReuseIdentifier: "itemCell")
+//        tableView.register(UINib(nibName: "ItemCell", bundle: nil), forCellReuseIdentifier: "itemCell")
         tableView.rowHeight = UITableView.automaticDimension
         
         do {
             let request : NSFetchRequest<Item> = Item.fetchRequest()
+            request.sortDescriptors = [NSSortDescriptor(key: "orderId", ascending: true)]
             let data = try context.fetch(request)
             if data.count == 0 {
                 ProgressHUD.show()
@@ -58,9 +59,15 @@ class ListViewController: UITableViewController {
         
         if let urlString = items[indexPath.row].imageUrl {
             let url = URL(string: urlString)
-            let data = try? Data(contentsOf: url!)
-                cell.imageViewItem.image = UIImage(data: data!)
             
+            Alamofire.request(url!).response { response in
+                if let data = response.data {
+                    let image = UIImage(data: data)
+                    cell.imageViewItem.image = image
+                } else {
+                    print("Data is nil. I don't know what to do :(")
+                }
+            }
         }
         
         return cell
@@ -86,6 +93,14 @@ class ListViewController: UITableViewController {
     
     
     //MARK: requesting data
+    
+    @IBAction func refreshClicked(_ sender: UIBarButtonItem) {
+        ProgressHUD.show()
+        requestForData {
+            ProgressHUD.dismiss()
+        }
+    }
+    
     func requestForData(completion: (()->())? = nil) {
         Alamofire.request("https://www.futuremind.com/recruitment-task", method: .get).responseJSON { response in
         
@@ -100,6 +115,11 @@ class ListViewController: UITableViewController {
             
             let json : JSON = JSON(response.result.value!)
 
+            for item in self.items {
+                self.context.delete(item)
+            }
+            self.items.removeAll()
+            
             self.items = json.array?.compactMap({ itemJson in
                 let item = Item(context: self.context)
                 item.desc = itemJson["description"].string
@@ -111,6 +131,8 @@ class ListViewController: UITableViewController {
                 dateFormatter.dateFormat = "yyyy-MM-dd"
                 item.modificationDate = dateFormatter.date(from: itemJson["modificationDate"].string!)
                 return item
+            }).sorted(by: { (a, b) -> Bool in
+                return a.orderId < b.orderId
             }) ?? []
             
             do {
@@ -118,10 +140,9 @@ class ListViewController: UITableViewController {
             } catch {
                 ProgressHUD.showError("error saving data \(String(describing: error))")
             }
-            
+
             self.tableView.reloadData()
         }
-        
     }
 }
 
